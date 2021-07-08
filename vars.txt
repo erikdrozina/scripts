@@ -1,0 +1,2 @@
+working_dir=~/test/
+local_path=$(pwd)
