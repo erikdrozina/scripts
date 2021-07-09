@@ -1,2 +1,5 @@
-working_dir=~/test/
+#   the folder where you want to work in
+working_dir=~/android/r/
+
+#   the current folder
 local_path=$(pwd)
