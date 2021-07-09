@@ -13,7 +13,7 @@ echo -e "\nPS: this will overwrite any existing folder with the same name\n\n"
 read -p "How do you want to call the folder? " foldername
 
 #   initializing repo
-cd $working_dir && rm -rf $foldername && mkdir $foldername && cd $foldername 
+cd $android_working_dir && rm -rf $foldername && mkdir $foldername && cd $foldername 
 if repo init -u https://github.com/Octavi-OS/platform_manifest.git -b maintainers  --depth=1; then
     #   syncing repo
     echo -e "repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)" >> reposync.sh

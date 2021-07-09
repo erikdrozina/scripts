@@ -11,7 +11,7 @@ read -p "Folder name with source inside: " foldername
 
 echo -e "\nReady to build!\n"
 
-cd $working_dir && cd $foldername
+cd $android_working_dir && cd $foldername
 . build/envsetup.sh
 
 if lunch arrow_$codename-userdebug; then

@@ -13,7 +13,7 @@ echo -e "\nPS: this will overwrite any existing folder with the same name\n\n"
 read -p "How do you want to call the folder? " foldername
 
 #   initializing repo
-cd $working_dir && rm -rf $foldername && mkdir $foldername && cd $foldername 
+cd $android_working_dir && rm -rf $foldername && mkdir $foldername && cd $foldername 
 if repo init -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 --depth=1; then
     #   syncing repo
     echo -e "repo sync -j$(nproc --all)" >> reposync.sh
