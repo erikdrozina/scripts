@@ -15,4 +15,4 @@ Then change the permissions of the files in the folder with
 
     chmod -R 755 ~/path
 
-Now you cna use the scripts inside the path where you want
+Now you can use the scripts inside the path where you want
