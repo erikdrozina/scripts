@@ -14,9 +14,9 @@ read -p "How do you want to call the folder? " foldername
 
 #   initializing repo
 cd $android_working_dir && rm -rf $foldername && mkdir $foldername && cd $foldername 
-if  repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 --depth=1; then
+if  repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.0; then
     #   syncing repo
-    echo -e "repo sync -j$(nproc --all)" >> reposync.sh
+    echo -e "repo sync -j8" >> reposync.sh
     bash reposync.sh
     echo -e "DONE! You can start building now :)"
 else
