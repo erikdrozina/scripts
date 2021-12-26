@@ -1,5 +1,5 @@
 #   the folder where you want to work in
-android_working_dir=~/android/r/
+android_working_dir=~/SSD/android/r/
 
 #   the current folder
 local_path=$(pwd)
