@@ -17,7 +17,7 @@ if cd $android_working_dir$foldername; then
     git clone https://github.com/erikdrozina/android_device_xiaomi_sm6150-common -b arrow-12 device/xiaomi/sm6150-common
 
     echo -e "\nCloning Kernel Tree\n"
-    git clone https://github.com/OctaviOS-Devices/kernel_xiaomi_tucana kernel/xiaomi/sm6150
+    git clone https://github.com/OctaviOS-Devices/android_kernel_xiaomi_tucana kernel/xiaomi/sm6150
 
     echo -e "\nCloning Vendor Tree\n"
     git clone https://gitlab.com/erikdrozina/android_vendor_xiaomi -b 12 vendor/xiaomi
