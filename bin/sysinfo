@@ -7,26 +7,25 @@
 cpu_name=$(cat /proc/cpuinfo | grep "model name" | uniq | cut -c 14-)
 cpu_cores=$(cat /proc/cpuinfo | grep processor | wc -l)
 cpu_tctl_temp=$(sensors | grep "Tctl" | cut -c 16-)
-cpu_tdie_temp=$(sensors | grep "Tdie" | cut -c 16-)
 cpu_tccd1_temp=$(sensors | grep "Tccd1" | cut -c 16-)
 cpu_freq=$(grep 'cpu MHz' /proc/cpuinfo)
 mem_total=$(cat /proc/meminfo | grep "MemTotal" | cut -c 17-)
-mem_free=$(cat /proc/meminfo | grep "MemFree" | cut -c 17-)
+mem_available=$(cat /proc/meminfo | grep "MemAvailable" | cut -c 17-)
 swa_total=$(cat /proc/meminfo | grep "SwapTotal" | cut -c 17-)
 swa_free=$(cat /proc/meminfo | grep "SwapFree" | cut -c 17-)
 
+BLUE='\033[0;34m'
+NC='\033[0m'
 
-echo -e "\n\n                   CPU:\n"
-echo -e "Model Name:               $cpu_name"
-echo -e "Total computing cores:    $cpu_cores"
-echo -e "Control temp:             $cpu_tctl_temp"
-echo -e "Actual die temp:          $cpu_tdie_temp"
-echo -e "Ccd1 temp:                $cpu_tccd1_temp\n\n"
-echo -e "               Frequencies:\n"
-echo -e "$cpu_freq\n\n"
+echo -e "\n${BLUE}CPU:${NC}"
+echo -e "Model Name      : $cpu_name"
+echo -e "Processing units: $cpu_cores"
+echo -e "Control temp    : $cpu_tctl_temp"
+echo -e "Actual die temp : $cpu_tccd1_temp\n"
+echo -e "$cpu_freq\n"
 
-echo -e "               Memory:\n"
-echo -e "Total Memory:             $mem_total"
-echo -e "Free Memory:              $mem_free\n"
-echo -e "Total Swap:               $swa_total"
-echo -e "Free Swap:                $swa_free\n\n"
+echo -e "${BLUE}Memory:${NC}"
+echo -e "Total Memory    : $mem_total"
+echo -e "Available Memory: $mem_available"
+echo -e "Total Swap      : $swa_total"
+echo -e "Free Swap       : $swa_free\n"
